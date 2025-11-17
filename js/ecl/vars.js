@@ -321,7 +321,7 @@ const VAR_7 = {
         inherit: true
     },
     10005: {
-        number: 10004,
+        number: 10005,
         game: 7,
         type: "%",
         access: "rw",
@@ -557,152 +557,152 @@ const VAR_7 = {
         game: 7,
         type: "$",
         access: "rw",
-        scope: "g",
-        desc: "First integer function argument. Sub calls write the value of [var=10037,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "First integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10037,7]. Implicitly read by $[var=10056,7]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10030: {
         number: 10030,
         game: 7,
         type: "$",
         access: "rw",
-        scope: "g",
-        desc: "Second integer function argument. Sub calls write the value of [var=10038,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Second integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10038,7]. Implicitly read by $[var=10056,7]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10031: {
         number: 10031,
         game: 7,
         type: "$",
         access: "rw",
-        scope: "g",
-        desc: "Third integer function argument.  Sub calls write the value of [var=10039,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Third integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10039,7]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10032: {
         number: 10032,
         game: 7,
         type: "$",
         access: "rw",
-        scope: "g",
-        desc: "Fourth integer function argument.  Sub calls write the value of [var=10040,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Fourth integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10040,7]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10033: {
         number: 10033,
         game: 7,
         type: "%",
         access: "rw",
-        scope: "g",
-        desc: "First float function argument.  Sub calls write the value of [var=10041,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "First float value to be passed as a function argument. When a sub is called, the value is copied to [var=10041,7]. Implicitly read by %[var=10056,7]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10034: {
         number: 10034,
         game: 7,
         type: "%",
         access: "rw",
-        scope: "g",
-        desc: "Second float function argument.  Sub calls write the value of [var=10042,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Second float value to be passed as a function argument. When a sub is called, the value is copied to [var=10042,7]. Implicitly read by %[var=10056,7]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10035: {
         number: 10035,
         game: 7,
         type: "%",
         access: "rw",
-        scope: "g",
-        desc: "Third float function argument.  Sub calls write the value of [var=10043,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Third float value to be passed as a function argument. When a sub is called, the value is copied to [var=10043,7]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10036: {
         number: 10036,
         game: 7,
         type: "%",
         access: "rw",
-        scope: "g",
-        desc: "Fourth float function argument.  Sub calls write the value of [var=10044,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Fourth float value to be passed as a function argument. When a sub is called, the value is copied to [var=10044,7]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10037: {
         number: 10037,
         game: 7,
         type: "$",
         access: "rw",
-        scope: "l",
-        desc: "First integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10029,7]. Implicitly read by $[var=10056,7]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "First integer function argument. Sub calls write the value of [var=10029,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10038: {
         number: 10038,
         game: 7,
         type: "$",
         access: "rw",
-        scope: "l",
-        desc: "Second integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10030,7]. Implicitly read by $[var=10056,7]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Second integer function argument. Sub calls write the value of [var=10030,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10039: {
         number: 10039,
         game: 7,
         type: "$",
         access: "rw",
-        scope: "l",
-        desc: "Third integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10031,7]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Third integer function argument.  Sub calls write the value of [var=10031,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10040: {
         number: 10040,
         game: 7,
         type: "$",
         access: "rw",
-        scope: "l",
-        desc: "Fourth integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10032,7]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Fourth integer function argument.  Sub calls write the value of [var=10032,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10041: {
         number: 10041,
         game: 7,
         type: "%",
         access: "rw",
-        scope: "l",
-        desc: "First float value to be passed as a function argument. When a sub is called, the value is copied to [var=10033,7]. Implicitly read by %[var=10056,7]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "First float function argument.  Sub calls write the value of [var=10033,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10042: {
         number: 10042,
         game: 7,
         type: "%",
         access: "rw",
-        scope: "l",
-        desc: "Second float value to be passed as a function argument. When a sub is called, the value is copied to [var=10033,7]. Implicitly read by %[var=10056,7]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Second float function argument.  Sub calls write the value of [var=10034,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10043: {
         number: 10043,
         game: 7,
         type: "%",
         access: "rw",
-        scope: "l",
-        desc: "Third float value to be passed as a function argument. When a sub is called, the value is copied to [var=10033,7]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Third float function argument.  Sub calls write the value of [var=10035,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10044: {
         number: 10044,
         game: 7,
         type: "%",
         access: "rw",
-        scope: "l",
-        desc: "Fourth float value to be passed as a function argument. When a sub is called, the value is copied to [var=10033,7]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Fourth float function argument.  Sub calls write the value of [var=10036,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10045: {
         number: 10045,
@@ -810,7 +810,7 @@ const VAR_7 = {
         type: "?",
         access: "r",
         scope: "g",
-        desc: "When read as int: Random integer. Can be negative. When read as float: Random float between 0.0f and 1.0f.",
+        desc: "When read as int: Random integer. Can be negative.[br]When read as float: Random float between 0.0f and 1.0f.",
         documented: true
     },
     10056: {
@@ -819,7 +819,7 @@ const VAR_7 = {
         type: "?",
         access: "r",
         scope: "g",
-        desc: "When read as int: Equivalent to ([var=10029,7] ? (unsigned)$[var=10033,7] / [var=10029,7] : 0) + [var=10030,7]. When read as float: Equivalent to %[var=10033,7] * [var=10041,7] + [var=10042,7].",
+        desc: "When read as int: [code]([var=10029,7] ? (unsigned)$[var=10055,7] / [var=10029,7] : 0) + [var=10030,7][/code][br]When read as float: [code]%[var=10055,7] * [var=10033,7] + [var=10034,7][/code]",
         documented: true
     },
     10057: {
@@ -877,7 +877,7 @@ const VAR_7 = {
         type: "$",
         access: "r",
         scope: "e",
-        desc: "If enemy is a boss, then it's the argument passed to ins_99. If enemy is not a boss, this could be whatever (but 0 by default).",
+        desc: "If enemy is a boss, then it's the argument passed to ins_99.[br]If enemy is not a boss, this could be whatever (but 0 by default).",
         documented: true,
         inherit: false
     },
@@ -1510,110 +1510,115 @@ const VAR_8 = {
         game: 8,
         type: "$",
         access: "rw",
-        scope: "g",
-        desc: "First integer function argument. Sub calls write the value of [var=10061,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "First integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10061,8]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10054: {
         number: 10054,
         game: 8,
         type: "$",
         access: "rw",
-        scope: "g",
-        desc: "Second integer function argument. Sub calls write the value of [var=10062,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Second integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10062,8]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10055: {
         number: 10055,
         game: 8,
         type: "$",
         access: "rw",
-        scope: "g",
-        desc: "Third integer function argument. Sub calls write the value of [var=10063,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Third integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10063,8]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10056: {
         number: 10056,
         game: 8,
         type: "$",
         access: "rw",
-        scope: "g",
-        desc: "Fourth integer function argument. Sub calls write the value of [var=10064,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Fourth integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10064,8]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10057: {
         number: 10057,
         game: 8,
         type: "%",
         access: "rw",
-        scope: "g",
-        desc: "First float function argument. Sub calls write the value of [var=10065,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "First float value to be passed as a function argument. When a sub is called, the value is copied to [var=10065,8]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10058: {
         number: 10058,
         game: 8,
         type: "%",
         access: "rw",
-        scope: "g",
-        desc: "Second float function argument. Sub calls write the value of [var=10066,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Second float value to be passed as a function argument. When a sub is called, the value is copied to [var=10066,8]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10059: {
         number: 10059,
         game: 8,
         type: "%",
         access: "rw",
-        scope: "g",
-        desc: "Third float function argument. Sub calls write the value of [var=10067,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Third float value to be passed as a function argument. When a sub is called, the value is copied to [var=10067,8]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10060: {
         number: 10060,
         game: 8,
         type: "%",
         access: "rw",
-        scope: "g",
-        desc: "Fourth float function argument. Sub calls write the value of [var=10068,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
-        documented: true
+        scope: "l",
+        desc: "Fourth float value to be passed as a function argument. When a sub is called, the value is copied to [var=10068,8]." + inherited_variable_note,
+        documented: true,
+        inherit: true
     },
     10061: {
         number: 10061,
         game: 8,
         type: "$",
         access: "rw",
-        scope: "l",
-        desc: "First integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10053,8]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "First integer function argument. Sub calls write the value of [var=10053,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10062: {
         number: 10062,
         game: 8,
         type: "$",
         access: "rw",
-        scope: "l",
-        desc: "Second integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10054,8]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Second integer function argument. Sub calls write the value of [var=10054,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10063: {
         number: 10063,
         game: 8,
         type: "$",
         access: "rw",
-        scope: "l",
-        desc: "Third integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10055,8]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Third integer function argument. Sub calls write the value of [var=10055,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10064: {
         number: 10064,
         game: 8,
         type: "$",
         access: "rw",
-        scope: "l",
-        desc: "Fourth integer value to be passed as a function argument. When a sub is called, the value is copied to [var=10056,8]." + inherited_variable_note,
+        scope: "g",
+        desc: "Fourth integer function argument. Sub calls write the value of [var=10056,7] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
         documented: true,
         inherit: true
     },
@@ -1622,40 +1627,36 @@ const VAR_8 = {
         game: 8,
         type: "%",
         access: "rw",
-        scope: "l",
-        desc: "First float value to be passed as a function argument. When a sub is called, the value is copied to [var=10057,8]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "First float function argument. Sub calls write the value of [var=10057,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10066: {
         number: 10066,
         game: 8,
         type: "%",
         access: "rw",
-        scope: "l",
-        desc: "Second float value to be passed as a function argument. When a sub is called, the value is copied to [var=10058,8]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Second float function argument. Sub calls write the value of [var=10058,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10067: {
         number: 10067,
         game: 8,
         type: "%",
         access: "rw",
-        scope: "l",
-        desc: "Third float value to be passed as a function argument. When a sub is called, the value is copied to [var=10059,8]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Third float function argument. Sub calls write the value of [var=10059,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10068: {
         number: 10068,
         game: 8,
         type: "%",
         access: "rw",
-        scope: "l",
-        desc: "Fourth float value to be passed as a function argument. When a sub is called, the value is copied to [var=10060,8]." + inherited_variable_note,
-        documented: true,
-        inherit: true
+        scope: "g",
+        desc: "Fourth float function argument. Sub calls write the value of [var=10060,8] into this variable before switching to a new context for the sub. [c=orange]This is a global variable that gets overwritten frequently, copy arguments to other registers if you need to keep the values.[/c]",
+        documented: true
     },
     10069: {
         number: 10069,
@@ -1812,7 +1813,7 @@ const VAR_8 = {
         type: "$",
         access: "r",
         scope: "e",
-        desc: "If enemy is a boss, then it's the argument passed to [ins=127,8]. If enemy is not a boss, this could be whatever (but 0 by default).",
+        desc: "If enemy is a boss, then it's the argument passed to [ins=127,8].[br]If enemy is not a boss, this could be whatever (but 0 by default).",
         documented: true,
         inherit: false
     },
