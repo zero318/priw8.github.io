@@ -4,7 +4,16 @@ Check [here](#s=modding/credits) for credits.
 [html]
 Select game version:
 <select class='ecl-table-game-select'>
+    <option value="06">06 (Embodiment of Scarlet Devil)</option>
+    <option value="07">07 (Perfect Cherry Blossom)</option>
     <option value="08">08 (Imperishable Night)</option>
+    <option value="09">09 (Phantasmagoria of Flower View)</option>
+    <option value="09.5">09.5 (Shoot the Bullet)</option>
+    <option value="10">10 (Mountain of Faith)</option>
+    <option value="11">11 (Subterranean Animism)</option>
+    <option value="12">12 (Undefined Fantastic Object)</option>
+    <option value="12.5">12.5 (Double Spoiler)</option>
+    <option value="12.8">12.8 (Great Fairy Wars)</option>
     <option value="13">13 (Ten Desires)</option>
     <option value="14">14 (Double Dealing Character)</option>
     <option value="14.3">14.3 (Impossible Spell Card)</option>
@@ -72,8 +81,9 @@ onContentLoad(async function() {
         target.innerHTML = generateOpcodeTable(game);
         initTableNavigation();
     } else {
-        await loadEclmap(null, "?17", 17);
-        target.innerHTML = generateOpcodeTable(17);
+        const game = parseFloat(select.value);
+        await loadEclmap(null, "?"+game, game);
+        target.innerHTML = generateOpcodeTable(game);
         initTableNavigation();
     }
 });

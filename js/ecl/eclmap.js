@@ -176,7 +176,7 @@ class Eclmap {
                 this.currentSeqmap = this.timeline_ins_sig;
                 break;
             default:
-                this.err(`unknown control line: ${arg}`);
+                //this.err(`unknown control line: ${arg}`);
                 return 1;
         }
         return 0;
@@ -262,12 +262,9 @@ class Eclmap {
             }
 
             token = this.strtok(null, " \t\n");
-            if (!token) {
-                this.err("not enough tokens");
-                return;
-            }
-
-            if (token == "_")
+            if (!token)
+                token = ""
+            else if (token == "_")
                 token = ""; // specify empty strings with _
 
             set(num, token);

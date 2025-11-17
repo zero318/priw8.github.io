@@ -6,7 +6,11 @@ Note: [game=165]Violet Detector[/game] variables have not been researched yet an
 [html]
 Select game version:
 <select class='var-table-game-select'>
+    <option value="6">06 (Embodiment of Scarlet Devil)</option>
+    <option value="7">07 (Perfect Cherry Blossom)</option>
     <option value="8">08 (Imperishable Night)</option>
+    <option value="09">09 (Phantasmagoria of Flower View)</option>
+    <option value="09.5">09.5 (Shoot the Bullet)</option>
     <option value="10">10 (Mountain of Faith)</option>
     <option value="11">11 (Subterranean Animism)</option>
     <option value="12">12 (Undefined Fantastic Object)</option>
@@ -18,8 +22,9 @@ Select game version:
     <option value="15">15 (Legacy of Lunatic Kingdom)</option>
     <option value="16">16 (Hidden Star in Four Seasons)</option>
     <option value="16.5">16.5 (Volcanic Disaster)</option>
-    <option value="17" selected>17 (Wily Beast and Weakest Creature)</option>
-    <!--<option value="18" selected>18 (Unconnected Marketeers)</option>-->
+    <option value="17">17 (Wily Beast and Weakest Creature)</option>
+    <option value="18" selected>18 (Unconnected Marketeers)</option>
+    <option value="18.5">18.5 (100th Black Market)</option>
 </select>
 
 Eclmap for variable names:<br><br>
@@ -65,8 +70,9 @@ onContentLoad(async function() {
         await loadEclmap(null, "?"+query.table, game);
         target.innerHTML = generateVarTable(game);
     } else {
-        await loadEclmap(null, "?17", 17);
-        target.innerHTML = generateVarTable(17);
+        const game = parseFloat(select.value);
+        await loadEclmap(null, "?"+game, game);
+        target.innerHTML = generateVarTable(game);
     }
 });
 [/script]

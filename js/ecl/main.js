@@ -7,11 +7,13 @@ function generateVarTable(game) {
 	table += "<table>";
 	table += "<tr><th>ID</th><th>type</th><th>access</th><th>scoping</th><th>name</th><th>description</th></tr>";
 
-	const limit = getVarLimits(normalized);
+	let limit = getVarLimits(normalized);
 
 	let total = 0;
 	let documented = 0;
-	for (let i=limit[0]; i<=limit[1]; i++) {
+    const iter = normalized != 6 ? 1 : -1;
+    const end = limit[1] += iter;
+	for (let i=limit[0]; i != end; i += iter) {
 		const v = getVarNoCheck(normalized, i);
 		if (v) {
 			++total;
@@ -29,16 +31,39 @@ function generateVarTable(game) {
 
 function getVarTableRow(v) {
 	if (v == null) return "";
-	let idString = v.number + (v.type == "$" ? "" : ".0f");
-	let typeString = v.type == "$" ? "int" : "float";
+	let idString;
+	let typeString;
+	switch (v.type) {
+		case "?":
+			idString = v.number;
+			typeString = "typeless";
+			break;
+		case "$":
+			idString = v.number;
+			typeString = "int";
+			break;
+		default:
+			idString = v.number + ".0f";
+			typeString = "float";
+			break;
+	}
 	let accessString = v.access == "rw" ? "read/write" : "read-only";
-	let scopeString = v.scope == "g" ? "global" : "local";
+	let scopeString;
+	switch (v.scope) {
+		case "g": scopeString = "global"; break;
+		case "e": scopeString = "enemy-local"; break;
+		default: scopeString = "local"; break;
+	}
 	return `<tr><td>${idString}</td><td>${typeString}</td><td>${accessString}</td><td>${scopeString}</td><td>${getVarName(v.number, v.documented)}</td><td>${v.desc}</td></tr>`;
 }
 
 function getVarLimits(game) {
 	switch(game) {
+        case 6: return VARLIMIT_6;
+        case 7: return VARLIMIT_7;
 		case 8: return VARLIMIT_8;
+		case 9: return VARLIMIT_9;
+		case 95: return VARLIMIT_95;
 		case 10: return VARLIMIT_10;
 		case 11: return VARLIMIT_11;
 		case 12: return VARLIMIT_12;
@@ -52,6 +77,7 @@ function getVarLimits(game) {
 		case 165: return VARLIMIT_165;
 		case 17: return VARLIMIT_17;
 		case 18: return VARLIMIT_18;
+		case 185: return VARLIMIT_185;
 	}
 }
 
@@ -71,8 +97,10 @@ function getVar(game, id) {
 function getVarNoCheck(game, id) {
 	let ret = null;
 	switch(game) {
+		case 185:
+			ret = getVarFromList(VAR_185, id);
 		case 18:
-			ret = getVarFromList(VAR_18, id);
+			if (!ret) ret = getVarFromList(VAR_18, id);
 		case 17:
 			if (!ret) ret = getVarFromList(VAR_17, id);
 		case 165:
@@ -98,8 +126,21 @@ function getVarNoCheck(game, id) {
 		case 10:
 			if (!ret) ret = getVarFromList(VAR_10, id);
 			break;
+		case 95:
+			ret = getVarFromList(VAR_95, id);
+			break;
+		case 9:
+			ret = getVarFromList(VAR_9, id);
+			break;
 		case 8:
-			if (!ret) ret = getVarFromList(VAR_8, id);
+			ret = getVarFromList(VAR_8, id);
+			break;
+		case 7:
+			ret = getVarFromList(VAR_7, id);
+			break;
+		case 6:
+			ret = getVarFromList(VAR_6, id);
+			break;
 	}
 	return ret;
 }
@@ -117,10 +158,29 @@ function getVarName(id, documented) {
 
 function getVarTip(v) {
 	if (v == null) return "";
-	let idString = v.number + (v.type == "$" ? "" : ".0f");
-	let typeString = v.type == "$" ? "int" : "float";
+	let idString;
+	let typeString;
+	switch (v.type) {
+		case "?":
+			idString = v.number;
+			typeString = "typeless";
+			break;
+		case "$":
+			idString = v.number;
+			typeString = "int";
+			break;
+		default:
+			idString = v.number + ".0f";
+			typeString = "float";
+			break;
+	}
 	let accessString = v.access == "rw" ? "read/write" : "read-only";
-	let scopeString = v.scope == "g" ? "global" : "local";
+	let scopeString;
+	switch (v.scope) {
+		case "g": scopeString = "global"; break;
+		case "e": scopeString = "enemy-local"; break;
+		default: scopeString = "local"; break;
+	}
 	let tip = `**${idString} - ${getVarName(v.number, v.documented)}** - ${scopeString}, ${accessString}, ${typeString} variable[br][hr]${v.desc}`;
 	return MD.makeHtml(tip.replace(/\[var=/g, "[var_notip="));
 }
@@ -133,7 +193,16 @@ function normalizeGameVersion(num) {
 
 function getGroups(game) {
 	switch(game) {
+		//case 6:   return GROUPS_6;
+		//case 7:   return GROUPS_7;
 		case 8:   return GROUPS_8;
+		//case 9:   return GROUPS_9;
+		//case 95:  return GROUPS_95;
+		//case 10:  return GROUPS_10;
+		//case 11:  return GROUPS_11;
+		//case 12:  return GROUPS_12;
+		//case 125: return GROUPS_125;
+		//case 128: return GROUPS_128;
 		case 13:  return GROUPS_13;
 		case 14:  return GROUPS_14;
 		case 143: return GROUPS_143;
@@ -363,7 +432,7 @@ function generateOpcodeDesc(ins, notip=false) {
 
 function getOpcodeTip(ins, timeline) {
 	return escapeTip(
-/* NOTE: his string must abolutely NOT have any newlines in it */
+/* NOTE: this string must abolutely NOT have any newlines in it */
 `<br><b>${timeline ? "timeline ": ""}${ins.number} - ${getOpcodeName(ins.number, ins.documented, timeline)}(${generateOpcodeParameters(ins)})</b><br><hr>${generateOpcodeDesc(ins, true)}`
 	);
 }

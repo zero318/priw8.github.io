@@ -3,6 +3,7 @@ function generateVarTable() {
 	if (generatedVarTable) return generatedVarTable;
 	let html = "";
 	html += "<table>";
+	//html += "<tr><th>ID</th><th>type</th><th>access</th><th>scoping</th><th>inherited</th><th>name</th><th>description</th></tr>";
 	html += "<tr><th>ID</th><th>type</th><th>access</th><th>scoping</th><th>name</th><th>description</th></tr>";
 	for (let i=-10000; typeof VARS[i] != "undefined"; i++) {
 		html += getVarTableRow(VARS[i], i);
@@ -16,10 +17,31 @@ function generateVarTable() {
 function getVarTableRow(entry, id) {
 	if (entry == null) return "";
 	let [game, type, access, scope, name, desc] = entry;
-	let idString = id + (type == "$" ? "" : ".0f");
-	let typeString = type == "$" ? "int" : "float";
+	let idString;
+	let typeString;
+	switch (type) {
+		case "?":
+			idString = v.number;
+			typeString = "typeless";
+			break;
+		case "$":
+			idString = v.number;
+			typeString = "int";
+			break;
+		default:
+			idString = v.number + ".0f";
+			typeString = "float";
+			break;
+	}
 	let accessString = access == "rw" ? "read/write" : "read-only";
-	let scopeString = scope == "g" ? "global" : "local";
+	let scopeString;
+	switch (scope) {
+		case "g": scopeString = "global"; break;
+		case "e": scopeString = "enemy-local"; break;
+		default: scopeString = "local"; break;
+	}
+    //let inheritString = inherit;
+	//return `<tr style='color:%GAMECOLOR-${game}%'><td>${idString}</td><td>${typeString}</td><td>${accessString}</td><td>${scopeString}</td><td>${inheritString}</td><td>${type+name}</td><td>${desc}</td></tr>`;
 	return `<tr style='color:%GAMECOLOR-${game}%'><td>${idString}</td><td>${typeString}</td><td>${accessString}</td><td>${scopeString}</td><td>${type+name}</td><td>${desc}</td></tr>`;
 }
 
@@ -46,11 +68,32 @@ function getVarTip(expr) {
 	let [entry, id] = getVariableByName(expr);
 	if (entry == null) return "";
 	let [game, type, access, scope, name, desc] = entry;
-	let idString = id + (type == "$" ? "" : ".0f");
-	let typeString = type == "$" ? "int" : "float";
+	let idString;
+	let typeString;
+	switch (type) {
+		case "?":
+			idString = v.number;
+			typeString = "typeless";
+			break;
+		case "$":
+			idString = v.number;
+			typeString = "int";
+			break;
+		default:
+			idString = v.number + ".0f";
+			typeString = "float";
+			break;
+	}
 	let accessString = access == "rw" ? "read/write" : "read-only";
-	let scopeString = scope == "g" ? "global" : "local";
+	let scopeString;
+	switch (scope) {
+		case "g": scopeString = "global"; break;
+		case "e": scopeString = "enemy-local"; break;
+		default: scopeString = "local"; break;
+	}
+    //let inheritString = inherit;
 	let tip = `**${idString} - ${type+name}** - ${scopeString}, ${accessString}, ${typeString} variable[br][hr]${desc}`;
+	//let tip = `**${idString} - ${type+name}** - ${scopeString}, ${accessString}, ${inheritString}, ${typeString} variable[br][hr]${desc}`;
 	return tip;
 }
 

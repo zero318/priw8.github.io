@@ -1,3 +1,31 @@
+const GROUPS_6 = [
+    {
+        min: 0,
+        max: 135,
+        title: "Normal"
+    },
+    {
+        min: 0,
+        max: 12,
+        title: "Timeline",
+        timeline: true
+    }
+];
+
+const GROUPS_7 = [
+    {
+        min: 0,
+        max: 161,
+        title: "Normal"
+    },
+    {
+        min: 0,
+        max: 12,
+        title: "Timeline",
+        timeline: true
+    }
+];
+
 const GROUPS_8 = [
     {
         min: 0,
@@ -10,7 +38,35 @@ const GROUPS_8 = [
         title: "Timeline",
         timeline: true
     }
-]
+];
+
+const GROUPS_9 = [
+    {
+        min: 0,
+        max: 187,
+        title: "Normal"
+    },
+    {
+        min: 0,
+        max: 17,
+        title: "Timeline",
+        timeline: true
+    }
+];
+
+const GROUPS_95 = [
+    {
+        min: 0,
+        max: 158,
+        title: "Normal"
+    },
+    {
+        min: 0,
+        max: 15,
+        title: "Timeline",
+        timeline: true
+    }
+];
 
 const GROUPS_13 = 
 [
